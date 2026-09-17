@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow | To-Do App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">Task<span>Flow</span></div>
+        <p>Organize your day, one task at a time.</p>
+    </header>
+
+
+    <main class="app-container">
+
+        <section class="todo-app">
+
+            <div class="app-heading">
+                <p class="small-title">MY TASKS</p>
+                <h1>Stay organized.</h1>
+                <p class="description">
+                    Add your tasks and keep track of what needs to be done.
+                </p>
+            </div>
+
+
+            <!-- Add Task -->
+
+            <div class="task-input-area">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What needs to be done?"
+                    maxlength="100"
+                >
+
+                <button id="addTaskButton">
+                    Add Task
+                </button>
+
+            </div>
+
+
+            <!-- Task Filters -->
+
+            <div class="task-controls">
+
+                <div class="filters">
+
+                    <button
+                        class="filter active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="filter"
+                        data-filter="active"
+                    >
+                        Active
+                    </button>
+
+                    <button
+                        class="filter"
+                        data-filter="completed"
+                    >
+                        Completed
+                    </button>
+
+                </div>
+
+                <span id="taskCount">0 tasks</span>
+
+            </div>
+
+
+            <!-- Task List -->
+
+            <ul id="taskList" class="task-list"></ul>
+
+
+            <!-- Empty Message -->
+
+            <div id="emptyMessage" class="empty-message">
+
+                <div class="empty-icon">✓</div>
+
+                <h2>No tasks yet</h2>
+
+                <p>
+                    Add a task above to get started.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <p>Built with HTML, CSS & JavaScript</p>
+
+        <span>© 2026 Arghya Maji</span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
