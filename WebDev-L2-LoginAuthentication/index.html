@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureLogin | Authentication System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">Secure<span>Login</span></div>
+
+        <p>Simple authentication system</p>
+    </header>
+
+
+    <main class="main-container">
+
+        <!-- Login Section -->
+        <section class="auth-card" id="loginSection">
+
+            <div class="auth-heading">
+                <p class="small-title">WELCOME BACK</p>
+
+                <h1>Sign in.</h1>
+
+                <p>
+                    Login to access your account.
+                </p>
+            </div>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="loginEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <p id="loginMessage" class="message"></p>
+
+
+                <button type="submit" class="primary-button">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p class="switch-text">
+                Don't have an account?
+                <button id="showRegisterButton">
+                    Create account
+                </button>
+            </p>
+
+        </section>
+
+
+        <!-- Register Section -->
+        <section
+            class="auth-card hidden"
+            id="registerSection"
+        >
+
+            <div class="auth-heading">
+
+                <p class="small-title">
+                    CREATE ACCOUNT
+                </p>
+
+                <h1>Register.</h1>
+
+                <p>
+                    Create your account to get started.
+                </p>
+
+            </div>
+
+
+            <form id="registerForm">
+
+                <div class="form-group">
+
+                    <label for="registerName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="registerEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="registerPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Create a password"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <p id="registerMessage" class="message"></p>
+
+
+                <button type="submit" class="primary-button">
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <p class="switch-text">
+                Already have an account?
+
+                <button id="showLoginButton">
+                    Login
+                </button>
+            </p>
+
+        </section>
+
+
+        <!-- Dashboard Section -->
+        <section
+            class="dashboard-card hidden"
+            id="dashboardSection"
+        >
+
+            <p class="small-title">
+                ACCOUNT DASHBOARD
+            </p>
+
+            <h1>
+                Welcome,
+                <span id="userName">
+                    User
+                </span>
+            </h1>
+
+            <p class="dashboard-text">
+                You have successfully logged in to your account.
+            </p>
+
+            <div class="user-info">
+
+                <div class="info-box">
+
+                    <span class="info-label">
+                        Name
+                    </span>
+
+                    <strong id="dashboardName">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span class="info-label">
+                        Email
+                    </span>
+
+                    <strong id="dashboardEmail">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <p>
+            Built with HTML, CSS & JavaScript
+        </p>
+
+        <span>
+            © 2026 Arghya Maji
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
