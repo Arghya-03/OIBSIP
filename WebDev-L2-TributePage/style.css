@@ -1,0 +1,458 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f2ec;
+    color: #242424;
+    line-height: 1.6;
+}
+
+/* Header */
+
+.header {
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+    border-bottom: 1px solid #ddd7cd;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.header nav {
+    display: flex;
+    gap: 28px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.header nav a:hover {
+    color: #a45c32;
+}
+
+
+/* Hero */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 7%;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-title {
+    color: #a45c32;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(50px, 7vw, 86px);
+    line-height: 0.98;
+    font-weight: 500;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+}
+
+.hero-text {
+    max-width: 570px;
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 13px 23px;
+
+    background: #242424;
+    color: #ffffff;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+
+.hero-button:hover {
+    background: #a45c32;
+    transform: translateY(-2px);
+}
+
+
+/* Hero Image */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: min(100%, 390px);
+    height: 490px;
+    object-fit: auto;
+    display: block;
+
+}
+
+.hero-image img:hover{
+    box-shadow: 18px 18px 18px #ddd5ca;
+}
+
+/* Common Section */
+
+.section {
+    padding: 100px 7%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-heading {
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(35px, 5vw, 54px);
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+
+/* About */
+
+.about-content {
+    max-width: 850px;
+    display: grid;
+    gap: 25px;
+}
+
+.about-content p {
+    color: #606060;
+    font-size: 17px;
+}
+
+
+/* Achievements */
+
+.achievements {
+    padding: 100px 7%;
+    background: #242424;
+    color: #ffffff;
+}
+
+.achievements .section-heading {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.achievements .small-title {
+    color: #c9865d;
+}
+
+.achievement-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.achievement-card {
+    min-height: 280px;
+    padding: 28px;
+
+    border: 1px solid #444;
+
+    transition: transform 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    border-color: #a45c32;
+}
+
+.number {
+    display: block;
+    color: #a45c32;
+    font-size: 13px;
+    margin-bottom: 55px;
+}
+
+.achievement-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.achievement-card p {
+    color: #b9b9b9;
+    font-size: 14px;
+}
+
+
+/* Timeline */
+
+.timeline-section {
+    max-width: 950px;
+}
+
+.timeline {
+    border-left: 1px solid #c9c2b8;
+    padding-left: 35px;
+}
+
+.timeline-item {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 25px;
+
+    padding-bottom: 45px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+    width: 9px;
+    height: 9px;
+
+    background: #a45c32;
+    border-radius: 50%;
+
+    left: -40px;
+    top: 5px;
+}
+
+.timeline-item > span {
+    color: #a45c32;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.timeline-item h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.timeline-item p {
+    color: #666;
+    font-size: 15px;
+}
+
+
+/* Quote */
+
+.quote-section {
+    padding: 110px 7%;
+    background: #e8e1d7;
+    text-align: center;
+}
+
+.quote {
+    max-width: 850px;
+    margin: auto;
+}
+
+.quote-mark {
+    display: block;
+
+    font-family: Georgia, serif;
+    font-size: 80px;
+    line-height: 0.6;
+
+    color: #a45c32;
+}
+
+.quote p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.25;
+    margin: 30px 0;
+}
+
+.quote-author {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* Footer */
+
+.footer {
+    padding: 25px 7%;
+
+    background: #1d1d1d;
+    color: #aaa;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 12px;
+}
+
+.footer span {
+    color: #777;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding-top: 60px;
+    }
+
+    .hero-content {
+        max-width: 750px;
+    }
+
+    .hero-image {
+        justify-content: flex-start;
+    }
+
+    .achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 18px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .header nav {
+        gap: 18px;
+    }
+
+    .header nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 20px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+
+    .image-placeholder {
+        height: 400px;
+        box-shadow: 10px 10px 0 #ddd5ca;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .achievements {
+        padding: 70px 20px;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-card {
+        min-height: auto;
+    }
+
+    .number {
+        margin-bottom: 30px;
+    }
+
+    .timeline {
+        padding-left: 25px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .timeline-item::before {
+        left: -30px;
+    }
+
+    .quote-section {
+        padding: 80px 20px;
+    }
+
+    .quote p {
+        font-size: 28px;
+    }
+
+    .footer {
+        padding: 20px;
+        flex-direction: column;
+        gap: 7px;
+        text-align: center;
+    }
+}
