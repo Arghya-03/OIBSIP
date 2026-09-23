@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./AdminDashboard.css";
 
 function AdminDashboard() {
   const [orders, setOrders] = useState([]);
@@ -61,94 +62,16 @@ fetchInventory();
 }, []);
 
   return (
-    <div>
+    <div className="admin-dashboard">
       <h1>👨‍💼 Admin Dashboard</h1>
 
-      <h2>📦 Customer Orders</h2>
-      <h2>📦 Inventory</h2>
-
-{inventory.length === 0 ? (
-  <p>No inventory items found.</p>
-) : (
-  inventory.map((item) => (
-    <div key={item._id}>
-      <p>
-        <strong>{item.name}</strong>
-      </p>
-
-      <p>Category: {item.category}</p>
-
-      <p>
-  Stock: {item.stock}
-</p>
-
-<input
-  type="number"
-  value={item.stock}
-  min="0"
-  onChange={(e) => {
-    setInventory((previousInventory) =>
-      previousInventory.map((inventoryItem) =>
-        inventoryItem._id === item._id
-          ? {
-              ...inventoryItem,
-              stock: Number(e.target.value),
-            }
-          : inventoryItem
-      )
-    );
-  }}
-/>
-
-<button
-  onClick={async () => {
-    try {
-      const token = localStorage.getItem("adminToken");
-
-      const response = await fetch(
-        `http://localhost:5000/api/admin/inventory/${item._id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            stock: item.stock,
-          }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (response.ok) {
-        alert("✅ Stock newStatuspdated successfully!");
-      } else {
-        alert("❌ " + data.message);
-      }
-    } catch (error) {
-      console.error("Stock update error:", error);
-      alert("❌ Could not update stock.");
-    }
-  }}
->
-  Save Stock
-</button>
-
-      <p>Low Stock Threshold: {item.lowStockThreshold}</p>
-
-      <hr />
-    </div>
-  ))
-)}
+            <h2>📦 Customer Orders</h2>
 
       {orders.length === 0 ? (
         <p>No orders found.</p>
       ) : (
         orders.map((order) => (
-          <div key={order._id}>
-            <hr />
-
+          <div className="order-card" key={order._id}>
             <p>
               <strong>Customer:</strong>{" "}
               {order.userId?.name}
@@ -193,69 +116,143 @@ fetchInventory();
             </p>
 
             <select
-  value={order.status}
-  onChange={async (e) => {
-    const newStatus = e.target.value;
+              value={order.status}
+              onChange={async (e) => {
+                const newStatus = e.target.value;
 
-    
+                try {
+                  const token = localStorage.getItem("adminToken");
 
-    try {
-      const token = localStorage.getItem("adminToken");
+                  const response = await fetch(
+                    `http://localhost:5000/api/admin/orders/${order._id}/status`,
+                    {
+                      method: "PUT",
+                      headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                      },
+                      body: JSON.stringify({
+                        status: newStatus,
+                      }),
+                    }
+                  );
 
-      
+                  const data = await response.json();
 
-      const response = await fetch(
-        `http://localhost:5000/api/admin/orders/${order._id}/status`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            status: newStatus,
-          }),
-        }
-      );
+                  if (response.ok) {
+                    setOrders((previousOrders) =>
+                      previousOrders.map((item) =>
+                        item._id === order._id
+                          ? { ...item, status: newStatus }
+                          : item
+                      )
+                    );
 
-      
+                    alert("✅ Order status updated!");
+                  } else {
+                    alert("❌ " + data.message);
+                  }
+                } catch (error) {
+                  console.error("Status update error:", error);
+                  alert("❌ Could not update order status.");
+                }
+              }}
+            >
+              <option value="Order Received">
+                Order Received
+              </option>
 
-      const data = await response.json();
+              <option value="In Kitchen">
+                In Kitchen
+              </option>
 
-      if (response.ok) {
-        setOrders((previousOrders) =>
-          previousOrders.map((item) =>
-            item._id === order._id
-              ? { ...item, status: newStatus }
-              : item
-          )
-        );
-
-        alert("✅ Order status updated!");
-      } else {
-        alert("❌ " + data.message);
-      }
-    } catch (error) {
-      console.error("Status update error:", error);
-      alert("❌ Could not update order status.");
-    }
-  }}
->
-  <option value="Order Received">
-    Order Received
-  </option>
-
-  <option value="In Kitchen">
-    In Kitchen
-  </option>
-
-  <option value="Sent to Delivery">
-    Sent to Delivery
-  </option>
-</select>
+              <option value="Sent to Delivery">
+                Sent to Delivery
+              </option>
+            </select>
           </div>
         ))
       )}
+
+      <h2>📦 Inventory</h2>
+
+      {inventory.length === 0 ? (
+        <p>No inventory items found.</p>
+      ) : (
+        inventory.map((item) => (
+          <div className="inventory-card" key={item._id}>
+            <p>
+              <strong>{item.name}</strong>
+            </p>
+
+            <p>Category: {item.category}</p>
+
+            <p>
+              Stock: {item.stock}
+            </p>
+
+            <input
+              type="number"
+              value={item.stock}
+              min="0"
+              onChange={(e) => {
+                setInventory((previousInventory) =>
+                  previousInventory.map((inventoryItem) =>
+                    inventoryItem._id === item._id
+                      ? {
+                          ...inventoryItem,
+                          stock: Number(e.target.value),
+                        }
+                      : inventoryItem
+                  )
+                );
+              }}
+            />
+
+            <button
+              onClick={async () => {
+                try {
+                  const token = localStorage.getItem("adminToken");
+
+                  const response = await fetch(
+                    `http://localhost:5000/api/admin/inventory/${item._id}`,
+                    {
+                      method: "PUT",
+                      headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                      },
+                      body: JSON.stringify({
+                        stock: item.stock,
+                      }),
+                    }
+                  );
+
+                  const data = await response.json();
+
+                  if (response.ok) {
+                    alert("✅ Stock updated successfully!");
+                  } else {
+                    alert("❌ " + data.message);
+                  }
+                } catch (error) {
+                  console.error("Stock update error:", error);
+                  alert("❌ Could not update stock.");
+                }
+              }}
+            >
+              Save Stock
+            </button>
+
+            <p>
+              Low Stock Threshold: {item.lowStockThreshold}
+            </p>
+
+            <hr />
+          </div>
+        ))
+      )}
+
     </div>
   );
 }

@@ -1,0 +1,238 @@
+.order-tracking {
+  min-height: 100vh;
+  padding: 70px 25px 90px;
+  background:
+    linear-gradient(
+      rgba(250, 249, 247, 0.22),
+      rgba(250, 249, 247, 0.22)
+    ),
+    url("/pizza-images/order-tracking-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Header */
+.tracking-header {
+  max-width: 900px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.tracking-header span {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #d62828;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.tracking-header h1 {
+  margin-bottom: 8px;
+  color: #1f1f1f;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.tracking-header p {
+  color: #666666;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Main tracking card */
+.tracking-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(238, 233, 228, 0.95);
+  border-radius: 18px;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.14),
+    0 3px 10px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(3px);
+}
+
+/* Current status */
+.tracking-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee9e4;
+}
+
+.tracking-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #8a8a8a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.tracking-card-header h2 {
+  color: #d62828;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.tracking-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff0f1;
+  font-size: 28px;
+}
+
+/* Tracking steps */
+.tracking-steps {
+  position: relative;
+  margin-top: 30px;
+}
+
+.tracking-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  min-height: 105px;
+  padding-bottom: 30px;
+}
+
+.tracking-step:last-child {
+  min-height: auto;
+  padding-bottom: 0;
+}
+
+/* Connecting line */
+.tracking-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 38px;
+  width: 2px;
+  height: calc(100% - 25px);
+  background: #e8e5e1;
+}
+
+/* Completed connecting line */
+.tracking-step.completed:not(:last-child)::after {
+  background: #d62828;
+}
+
+/* Circle */
+.step-circle {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #dedad5;
+  border-radius: 50%;
+  background: #ffffff;
+  color: transparent;
+  font-size: 15px;
+  font-weight: 800;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tracking-step.completed .step-circle {
+  border-color: #d62828;
+  background: #d62828;
+  color: #ffffff;
+  transform: scale(1.03);
+}
+
+/* Step content */
+.step-content {
+  padding-top: 2px;
+}
+
+.step-content h3 {
+  margin-bottom: 4px;
+  color: #333333;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.tracking-step.completed .step-content h3 {
+  color: #1f1f1f;
+}
+
+.step-content p {
+  color: #888888;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .order-tracking {
+  padding: 45px 16px 180px;
+  background-position: center top;
+}
+
+  .tracking-header {
+    margin-bottom: 32px;
+  }
+
+  .tracking-header h1 {
+    font-size: 30px;
+  }
+
+  .tracking-header p {
+    font-size: 14px;
+  }
+
+  .tracking-card {
+    padding: 23px 20px;
+    border-radius: 15px;
+  }
+
+  .tracking-card-header h2 {
+    font-size: 20px;
+  }
+
+  .tracking-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .tracking-step {
+    gap: 14px;
+    min-height: 105px;
+  }
+
+  .step-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tracking-step:not(:last-child)::after {
+    left: 17px;
+  }
+
+  .step-content h3 {
+    font-size: 16px;
+  }
+
+  .step-content p {
+    font-size: 12px;
+  }
+}

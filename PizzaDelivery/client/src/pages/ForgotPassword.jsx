@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./ForgotPassword.css";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -35,7 +36,8 @@ function ForgotPassword() {
   };
 
   return (
-    <div>
+  <div className="forgot-password-page">
+  <div className="forgot-password-card">
       <h1>🔐 Forgot Password</h1>
 
       <form onSubmit={handleForgotPassword}>
@@ -58,6 +60,7 @@ function ForgotPassword() {
         </button>
       </form>
     </div>
+  </div>
   );
 }
 

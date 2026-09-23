@@ -72,8 +72,16 @@ if (window.location.pathname === "/order-tracking") {
         <div className="logo">🍕 Pizza Delivery</div>
 
         <ul className="nav-links">
-          <li>Home</li>
-          <li>Menu</li>
+          <li onClick={() => {
+             window.location.href = "/";
+          }}>
+             Home
+          </li>
+          <li onClick={() => {
+             window.location.href = "/dashboard";
+          }}>
+             Menu
+          </li>
           <li onClick={() => {
                window.location.href = "/order-tracking";
               }}>
@@ -85,49 +93,230 @@ if (window.location.pathname === "/order-tracking") {
       </nav>
 
       <section className="hero">
-        <h1>🍕 Delicious Pizza</h1>
-
-        <h2>Delivered Hot to Your Door!</h2>
-
-        <p>
-          Choose your favorite pizza and customize it just the way you like.
-        </p>
-
-        <button
-          className="order-button"
-          onClick={() => setShowBuilder(true)}
-        >
-          Order Pizza
-        </button>
-      </section>
+  <button
+    className="order-button"
+    onClick={() => setShowBuilder(true)}
+  >
+    Order Pizza
+  </button>
+</section>
 
       <section className="pizzas">
-        <h2>Popular Pizzas</h2>
+        <div className="pizza-section-heading">
+  <span>OUR MENU</span>
+  <h2>Explore Our Pizzas</h2>
+  <p>Freshly made, loaded with flavor.</p>
+</div>
 
         <div className="pizza-container">
 
-          <div className="pizza-card">
-            <div className="pizza-image">🍕</div>
-            <h3>Margherita</h3>
-            <p>Classic cheese and tomato pizza.</p>
-            <div className="price">₹249</div>
-          </div>
+  <div className="pizza-card">
+    <div className="pizza-image">
+  <img src="/pizza-images/margherita.png" alt="Margherita Pizza" />
+</div>
 
-          <div className="pizza-card">
-            <div className="pizza-image">🍕</div>
-            <h3>Farmhouse</h3>
-            <p>Fresh vegetables with delicious cheese.</p>
-            <div className="price">₹299</div>
-          </div>
+    <div className="pizza-card-content">
+      <h3>Margherita</h3>
 
-          <div className="pizza-card">
-            <div className="pizza-image">🍕</div>
-            <h3>Cheese Burst</h3>
-            <p>Extra cheese for cheese lovers.</p>
-            <div className="price">₹349</div>
-          </div>
+      <p>
+        Classic cheese and tomato pizza with a delicious Italian-style taste.
+      </p>
 
-        </div>
+      <div className="pizza-card-bottom">
+        <div className="price">₹249</div>
+
+        <button
+          className="pizza-customize-button"
+          onClick={() => setShowBuilder(true)}
+        >
+          Customize
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div className="pizza-card">
+    <div className="pizza-image">
+  <img src="/pizza-images/farmhouse.png" alt="Farmhouse Pizza" />
+</div>
+
+    <div className="pizza-card-content">
+      <h3>Farmhouse</h3>
+
+      <p>
+        Fresh vegetables, premium cheese and delicious toppings on every bite.
+      </p>
+
+      <div className="pizza-card-bottom">
+        <div className="price">₹299</div>
+
+        <button
+          className="pizza-customize-button"
+          onClick={() => setShowBuilder(true)}
+        >
+          Customize
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div className="pizza-card">
+    <div className="pizza-image">
+  <img src="/pizza-images/cheese-burst.png" alt="Cheese Burst Pizza" />
+</div>
+
+    <div className="pizza-card-content">
+      <h3>Cheese Burst</h3>
+
+      <p>
+        Rich, creamy cheese loaded into every bite for true cheese lovers.
+      </p>
+
+      <div className="pizza-card-bottom">
+        <div className="price">₹349</div>
+
+        <button
+          className="pizza-customize-button"
+          onClick={() => setShowBuilder(true)}
+        >
+          Customize
+        </button>
+      </div>
+    </div>
+  </div>
+
+    <div className="pizza-card">
+    <div className="pizza-image">
+  <img src="/pizza-images/paneer-tikka.png" alt="Paneer Tikka Pizza" />
+</div>
+
+    <div className="pizza-card-content">
+      <h3>Paneer Tikka</h3>
+
+      <p>
+        Juicy paneer tikka with fresh vegetables and Indian-style spices.
+      </p>
+
+      <div className="pizza-card-bottom">
+        <div className="price">₹379</div>
+
+        <button
+          className="pizza-customize-button"
+          onClick={() => setShowBuilder(true)}
+        >
+          Customize
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div className="pizza-card">
+    <div className="pizza-image">
+  <img src="/pizza-images/veggie-supreme.png" alt="Veggie Supreme Pizza" />
+</div>
+
+    <div className="pizza-card-content">
+      <h3>Veggie Supreme</h3>
+
+      <p>
+        Loaded with fresh vegetables, olives, peppers and premium cheese.
+      </p>
+
+      <div className="pizza-card-bottom">
+        <div className="price">₹329</div>
+
+        <button
+          className="pizza-customize-button"
+          onClick={() => setShowBuilder(true)}
+        >
+          Customize
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div className="pizza-card">
+    <div className="pizza-image">
+  <img src="/pizza-images/spicy-chicken.png" alt="Spicy Chicken Pizza" />
+</div>
+
+    <div className="pizza-card-content">
+      <h3>Spicy Chicken</h3>
+
+      <p>
+        Tender chicken with spicy sauce, vegetables and melted cheese.
+      </p>
+
+      <div className="pizza-card-bottom">
+        <div className="price">₹399</div>
+
+        <button
+          className="pizza-customize-button"
+          onClick={() => setShowBuilder(true)}
+        >
+          Customize
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div className="pizza-card">
+    <div className="pizza-image">
+  <img src="/pizza-images/bbq-chicken.png" alt="BBQ Chicken Pizza" />
+</div>
+
+    <div className="pizza-card-content">
+      <h3>BBQ Chicken</h3>
+
+      <p>
+        Smoky BBQ sauce, tender chicken and melted cheese on a delicious crust.
+      </p>
+
+      <div className="pizza-card-bottom">
+        <div className="price">₹429</div>
+
+        <button
+          className="pizza-customize-button"
+          onClick={() => setShowBuilder(true)}
+        >
+          Customize
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div className="pizza-card">
+    <div className="pizza-image">
+  <img src="/pizza-images/loaded-cheese.png" alt="Loaded Cheese Pizza" />
+</div>
+
+    <div className="pizza-card-content">
+      <h3>Loaded Cheese</h3>
+
+      <p>
+        Extra cheese blend with a rich, creamy and satisfying cheesy taste.
+      </p>
+
+      <div className="pizza-card-bottom">
+        <div className="price">₹369</div>
+
+        <button
+          className="pizza-customize-button"
+          onClick={() => setShowBuilder(true)}
+        >
+          Customize
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
       </section>
 
     </div>

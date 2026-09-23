@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Register.css";
 
 function Register() {
   const [name, setName] = useState("");
@@ -35,8 +36,9 @@ function Register() {
     }
   };
 
-  return (
-    <div>
+return (
+  <div className="register-page">
+    <div className="register-card">
       <h1>🍕 Create Account</h1>
 
       <form onSubmit={handleRegister}>
@@ -84,7 +86,8 @@ function Register() {
         </button>
       </form>
     </div>
-  );
+  </div>
+);
 }
 
 export default Register;

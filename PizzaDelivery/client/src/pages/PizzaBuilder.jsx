@@ -107,9 +107,13 @@ if (showPayment) {
 
   return (
   <div className="pizza-builder">
-    <h1 className="builder-title">🍕 Build Your Pizza</h1>
+    <div className="builder-heading">
+       <span>CREATE YOUR PIZZA</span>
+      <h1>Build Your Perfect Pizza</h1>
+       <p>Choose your size, base, sauce, cheese and toppings.</p>
+    </div>
 
-    <div className="builder-step">
+    <div className="builder-step builder-step-size">
       <h2>Step 1: Choose Your Pizza Size</h2>
 
       <div className="option-group">
@@ -131,7 +135,7 @@ if (showPayment) {
       </p>
     </div>
 
-    <div className="builder-step">
+    <div className="builder-step builder-step-base">
       <h2>Step 2: Choose Your Base</h2>
 
       <div className="option-group">
@@ -159,7 +163,7 @@ if (showPayment) {
       </p>
     </div>
 
-    <div className="builder-step">
+    <div className="builder-step builder-step-sauce">
       <h2>Step 3: Choose Your Sauce</h2>
 
       <div className="option-group">
@@ -187,7 +191,7 @@ if (showPayment) {
       </p>
     </div>
 
-    <div className="builder-step">
+    <div className="builder-step builder-step-cheese">
       <h2>Step 4: Choose Your Cheese</h2>
 
       <div className="option-group">
@@ -216,7 +220,7 @@ if (showPayment) {
       </p>
     </div>
 
-    <div className="builder-step">
+    <div className="builder-step builder-step-toppings">
       <h2>Step 5: Choose Your Toppings</h2>
 
       <div className="topping-group">

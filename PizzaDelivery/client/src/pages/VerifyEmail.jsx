@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import "./VerifyEmail.css";
 
 function VerifyEmail() {
   const [message, setMessage] = useState("Verifying your email...");
@@ -35,10 +36,26 @@ function VerifyEmail() {
     verifyEmail();
   }, []);
 
+  const isError = message.startsWith("❌");
+  const isSuccess = message.startsWith("✅");
+
   return (
-    <div>
-      <h1>🍕 Email Verification</h1>
-      <h2>{message}</h2>
+    <div className="verify-email-page">
+      <div className="verify-email-card">
+
+        <div className="verify-email-icon">✉️</div>
+
+        <h1>Email Verification</h1>
+
+        <div
+          className={`verify-message ${
+            isError ? "error" : isSuccess ? "success" : "loading"
+          }`}
+        >
+          {message}
+        </div>
+
+      </div>
     </div>
   );
 }

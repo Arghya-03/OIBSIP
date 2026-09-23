@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Login.css";
 
 
 function Login() {
@@ -41,7 +42,8 @@ function Login() {
   };
 
   return (
-    <div>
+  <div className="login-page">
+    <div className="login-card">
       <h1>🍕 Login</h1>
 
       <form onSubmit={handleLogin}>
@@ -88,9 +90,10 @@ function Login() {
   Forgot Password?
 </button>
 
-      </form>
+         </form>
     </div>
-  );
+  </div>
+);
 }
 
 export default Login;

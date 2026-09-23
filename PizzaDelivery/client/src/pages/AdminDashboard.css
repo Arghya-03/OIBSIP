@@ -1,0 +1,221 @@
+.admin-dashboard {
+  min-height: 100vh;
+  padding: 60px 30px 90px;
+  background: #f6f7f9;
+  color: #1f1f1f;
+}
+
+.admin-dashboard > h1 {
+  max-width: 1200px;
+  margin: 0 auto 45px;
+  padding: 22px 28px;
+  text-align: left;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      rgba(35, 25, 20, 0.78),
+      rgba(35, 25, 20, 0.78)
+    ),
+    url("/pizza-images/navbar-bg.png");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.admin-dashboard > h2 {
+  max-width: 1200px;
+  margin: 42px auto 20px;
+  padding: 14px 18px;
+  color: #1f1f1f;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  border-left: 4px solid #d62828;
+  border-radius: 0 10px 10px 0;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.admin-dashboard > h2:first-of-type {
+  margin-top: 0;
+}
+
+/* Inventory */
+
+.inventory-card {
+  max-width: 1200px;
+  margin: 0 auto 18px;
+  padding: 24px 26px;
+  background: #ffffff;
+  border: 1px solid #e8e5e1;
+  border-radius: 16px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.inventory-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-card p {
+  margin-bottom: 9px;
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.inventory-card strong {
+  display: inline-block;
+  margin-bottom: 3px;
+  color: #1f1f1f;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.inventory-card input {
+  width: 110px;
+  min-height: 42px;
+  padding: 9px 12px;
+  margin: 8px 10px 10px 0;
+  border: 1px solid #dcd8d3;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.inventory-card input:focus {
+  border-color: #d62828;
+  box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.10);
+}
+
+.inventory-card button {
+  min-height: 42px;
+  padding: 9px 18px;
+  border: none;
+  border-radius: 9px;
+  background: #d62828;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 5px 12px rgba(214, 40, 40, 0.16);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.inventory-card button:hover {
+  background: #b71c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px rgba(214, 40, 40, 0.22);
+}
+
+.inventory-card hr {
+  border: none;
+}
+
+/* Orders */
+
+.order-card {
+  max-width:1200px;
+  margin:0 auto 20px;
+  padding:26px;
+  background:#fff;
+  border:1px solid #e8e5e1;
+  border-radius:16px;
+  box-shadow:0 5px 16px rgba(0,0,0,.06);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.order-card:hover {
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+.order-card p {
+  margin-bottom:10px;
+  color:#666;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.order-card strong {
+  color:#1f1f1f;
+  font-weight:750;
+}
+
+.order-card select {
+  min-height:42px;
+  margin-top:12px;
+  padding:9px 14px;
+  border:1px solid #dcd8d3;
+  border-radius:9px;
+  background:#fff;
+  color:#333;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  outline:none;
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+
+.order-card select:focus {
+  border-color:#d62828;
+  box-shadow:0 0 0 3px rgba(214,40,40,.10);
+}
+.order-card hr {
+  display: none;
+}
+
+@media(max-width:700px) {
+  .admin-dashboard {
+    padding:35px 15px 60px;
+  }
+
+  .admin-dashboard > h1 {
+    margin-bottom:30px;
+    padding:20px;
+    font-size:27px;
+    border-radius:14px;
+  }
+
+  .admin-dashboard > h2 {
+    margin:28px auto 18px;
+    padding:12px 15px;
+    font-size:20px;
+  }
+
+  .inventory-card,
+  .order-card {
+    padding:18px;
+    border-radius:14px;
+  }
+
+  .inventory-card input {
+    width:100%;
+    margin-right:0;
+  }
+
+  .inventory-card button {
+    width:100%;
+    margin-top:4px;
+  }
+
+  .order-card select {
+    width:100%;
+  }
+}

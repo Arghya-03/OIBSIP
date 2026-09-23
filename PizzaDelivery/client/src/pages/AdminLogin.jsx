@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./AdminLogin.css";
 
 function AdminLogin() {
   const [email, setEmail] = useState("");
@@ -41,14 +42,21 @@ function AdminLogin() {
   };
 
   return (
-    <div>
-      <h1>🔐 Admin Login</h1>
+  <div className="admin-login">
+    <div className="admin-login-card">
 
-      <form onSubmit={handleAdminLogin}>
-        <div>
-          <label>Email</label>
-          <br />
+      <div className="admin-login-header">
+        <div className="admin-login-icon">🔐</div>
+        <h1>Admin Login</h1>
+        <p>Sign in to manage Pizza Delivery</p>
+      </div>
+
+      <form onSubmit={handleAdminLogin} className="admin-login-form">
+
+        <div className="admin-form-group">
+          <label htmlFor="admin-email">Email</label>
           <input
+            id="admin-email"
             type="email"
             placeholder="Enter admin email"
             value={email}
@@ -56,12 +64,10 @@ function AdminLogin() {
           />
         </div>
 
-        <br />
-
-        <div>
-          <label>Password</label>
-          <br />
+        <div className="admin-form-group">
+          <label htmlFor="admin-password">Password</label>
           <input
+            id="admin-password"
             type="password"
             placeholder="Enter admin password"
             value={password}
@@ -69,14 +75,15 @@ function AdminLogin() {
           />
         </div>
 
-        <br />
-
-        <button type="submit">
+        <button type="submit" className="admin-login-button">
           Admin Login
         </button>
+
       </form>
+
     </div>
-  );
+  </div>
+);
 }
 
 export default AdminLogin;
